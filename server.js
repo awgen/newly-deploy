@@ -8,6 +8,10 @@ const PORT = 3306
 app.use(express.json());
 app.use(cors());
 
+header('Access-Control-Allow-Origin: *')
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE')
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization')
+
 
 const db = mysql.createConnection({
     user: "uofvntbm00d0ulsi",
