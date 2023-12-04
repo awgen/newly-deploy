@@ -4,15 +4,16 @@ const cors = require('cors')
 
 
 const app = express();
-
+const PORT = 3306
 app.use(express.json());
 app.use(cors());
 
+
 const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "",
-    database: "testingdeploy"
+    user: "uofvntbm00d0ulsi",
+    host: "b79spce0wvcyy1tdfmxh-mysql.services.clever-cloud.com",
+    password: "CEybMUFVgoF5xFEnVf6m",
+    database: "b79spce0wvcyy1tdfmxh"
 })
 
 // posting register
@@ -64,6 +65,4 @@ app.post('/login', (req, res) => {
 })
 
 
-app.listen(3002), () => {
-    console.log('listening...')
-}
+app.listen(PORT)
