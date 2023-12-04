@@ -36,6 +36,13 @@ app.post("/register", (req, res) => {
     return res.json("Registration successful");
 })
 
+app.get("/all", (req, res) => {
+    db.query("SELECT * FROM register ", (err, result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 // posting logins
 app.post('/login', (req, res) => {  
     const username = req.body.username
